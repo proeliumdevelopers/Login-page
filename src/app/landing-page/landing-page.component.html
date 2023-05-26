@@ -1,0 +1,39 @@
+<!-- <p>landing-page works!</p>
+<input type="button" (click)="logout()"> -->
+
+<mat-toolbar class="header head-col">
+  <mat-toolbar-row style="justify-content: space-between">
+      <span>
+
+      </span>
+      <!-- style="overflow-y: scroll;" -->
+      <span >
+          <span class="headingText" style="color: azure;">
+              Dataviss - Landing Page
+          </span>
+      </span>
+
+      <span>
+          <!-- <button mat-icon-button class="example-icon"  (click)="logout()">
+              <mat-icon matTooltip="Logout" class="fontsize-25">logout</mat-icon>
+          </button> -->
+          <!-- <app-user-template ></app-user-template> -->
+          <app-user-template (signOut)="logout()"></app-user-template>
+          <!-- //<Button (click)="logout()">Sign Out</Button> -->
+      </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="wrapper">
+
+  <div class="assetWrapper">
+      <a [routerLink]="['Chiller-Report']">
+          <mat-card class="app-suite-item-card">
+              <img class="img-MONIT" src="" alt="CHiller_pdf">
+          </mat-card>
+      </a>
+      <p class="app-suite-item-text" (click)="nav()"> Chiller-Report </p>
+
+  </div>
+
+</div>
+<!-- <app-chiller-reports></app-chiller-reports> -->

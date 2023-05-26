@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <mat-card class="example-card ">
+      <!-- <div>
+          <img src="../../assets/dataviss.png" alt="logo">
+          <h3>DATAVISS</h3>
+      </div> -->
+      <div style="margin-top: 25px;margin-bottom: 10px;width: 100%;">
+          <!-- <img src="../../assets/faciliviss.png" alt="logo"> -->
+          <strong><h3 style="color: #183693f2;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">DATAVISS</h3></strong>
+      </div>
+
+      <form class="form" name="loginForm" [formGroup]="loginForm" (submit)="login(loginForm.value)">
+      <mat-card-content>
+          <mat-form-field class="form-input" appearance="outline" >
+              <mat-icon class="maticon" matPrefix>account_circle</mat-icon>
+              <mat-label class="mat-label">Username</mat-label>
+              <input matInput class="mat-input" #name formControlName="name" >
+              <mat-error *ngIf="loginForm.get('name')?.hasError('required')">
+                  Username is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('name')?.hasError('name')">
+                  Please enter valid username
+              </mat-error>
+          </mat-form-field>
+          <!-- [type]="passwordVisibility?'text':'password'" -->
+          <mat-form-field class="form-input" appearance="outline" >
+              <mat-icon class="maticon" matPrefix >lock</mat-icon>
+              <mat-label class="mat-label">Password</mat-label>
+              <input matInput class="mat-input" type="password" formControlName="password" id="passwordInput" [type]="passwordVisibility?'text':'password'" >
+              <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                  Password is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+                  Password should be minimum 6 characters
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('maxlength')">
+                  Password should not exceed 100 characters
+              </mat-error>
+              <!-- *ngIf="!passwordVisibility" (click)="togglePasswordVisibility()" -->
+              <!-- *ngIf="passwordVisibility" (click)="togglePasswordVisibility()" -->
+              <mat-icon class="maticon" matSuffix style="cursor: pointer;" *ngIf="!passwordVisibility" (click)="togglePasswordVisibility()" >visibility</mat-icon>
+              <mat-icon class="maticon" matSuffix style="cursor: pointer;" *ngIf="passwordVisibility" (click)="togglePasswordVisibility()">visibility_off</mat-icon>
+          </mat-form-field>
+          <div class="hint-div">
+              <div id="remember-me">
+                  <!-- <mat-checkbox [checked]="isChecked()" disabled class="example-margin" color="primary">Keep me Logged in</mat-checkbox> -->
+              </div>
+              <div id="forgot-password">
+                  <a>Forgot Password ?</a>
+              </div>
+          </div>
+      </mat-card-content>
+      <mat-card-actions style="padding-bottom: 20px;">
+          <button type="submit" [disabled]="loginForm.invalid" class = "login-button" [class.off]="loginForm.invalid">Submit</button>
+      </mat-card-actions>
+      </form>
+  </mat-card>
+</div>

@@ -1,0 +1,118 @@
+//@import 'src/custom-styles/variable';
+$mobileWidth : 490px;
+
+h3 {
+  //font-style: normal;
+  color: #333333;
+  font-size: 40px;
+  margin: 0px 0px 40px 0px;
+}
+
+.mat-label {
+  padding-left: 10px;
+}
+
+.maticon {
+  padding: 0px;
+}
+
+.mat-input {
+  padding-left: 10px;
+  width: 310px;
+  min-width: 310px;
+  padding-bottom: 3px;
+}
+
+.example-card {
+  width: 450px;
+  min-width: 450px;
+  margin-top: -20px;
+  //box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  box-shadow: none;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+
+  @media screen and (max-width: $mobileWidth) {
+    padding-top: 350px;
+    padding-bottom: 16rem;
+  }
+
+  // border-top: 3px green solid;
+  // border-left: 3px red solid;
+  // border-right: 3px blue solid;
+  // border-bottom: 3px yellow solid;
+  // border-style: outset;
+  // box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.wrapper {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-width: 490px;
+  background-color: rgba(24, 54, 147, 0.95);
+
+  img {
+    object-fit: cover;
+    /*this makes the image in src fit to the size specified below*/
+    width: 60%;
+    /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 100px;
+  }
+
+  @media screen and (max-width: $mobileWidth) {}
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.form-input {
+  width: 400px;
+  min-width: 400px;
+  font-size: 17px;
+}
+
+.login-button {
+  border-radius: 5px;
+  width: 400px;
+  min-width: 400px;
+  background-color:#183693f2;
+  //box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  font-size: 1.3rem;
+  padding: 0.7rem 0.7rem;
+  margin: 3px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.off {
+  background-color:#183693f2;
+}
+
+.hint-div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#forgot-password :hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#forgot-password {
+  color: #183693f2;
+  margin-top: 3px;
+}
+
+mat-checkbox ::ng-deep .mat-checkbox-inner-container {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
